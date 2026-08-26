@@ -15,7 +15,7 @@ prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 
 SOMETING <- bind_rows(bisley1,bisley2,bisley3, prm)
 
-bigdatabigdata <- bigdata |> 
+tryingagain <- bigdata |> 
   select(Sample_Date, `NO3-N`, Mg, K, `NH4-N`, Sample_ID) |> 
   filter(year(Sample_Date)>= 1988 & year(Sample_Date) <= 1994) |> 
   arrange(Sample_ID, Sample_Date)
