@@ -13,7 +13,7 @@ bisley2 <- read_csv("data/QuebradaCuenca2-Bisley.csv")
 bisley3 <- read_csv("data/QuebradaCuenca3-Bisley.csv")
 prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 
-broken <- bind_rows(bisley1,bisley2,bisley3, prm)
+SOMETING <- bind_rows(bisley1,bisley2,bisley3, prm)
 
 bigdatabigdata <- bigdata |> 
   select(Sample_Date, `NO3-N`, Mg, K, `NH4-N`, Sample_ID) |> 
