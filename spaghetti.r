@@ -48,5 +48,22 @@ values |>
   geom_line() +
   facet_wrap(vars(Chem))
 
+data <- seq(1:200)
 
+for (x in 1:4){
+  for (y in 1:length)
+    mean()
+}
+mean(data[(1:3)])
 
+data[(1:3),2]
+
+values[(1:5),5]
+
+# This is if you know the name of the column at the time you write the code
+mean(values$conc[1:5], na.rm = TRUE)
+
+# If you want the column name/position to be programmatic
+mean_col <- "conc"
+mean(values[[mean_col]][1:5])
+# Double square brackets do "deep" indexing
