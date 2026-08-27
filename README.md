@@ -20,14 +20,14 @@ The purpose of this repo is to analyse certain chemical concentrations in four d
 ## Repo Structure
 
 - jms214final
-  - data
-    - QC1
-    - QC2
-    - QC3
-    - RMP
-  - finalscript
-  - spaghetti
-  - README
+  - data (contains raw data sourced from online)
+  - docs (contains files for website)
+  - figs (contains nothing)
+  - output (contains cleaned data)
+  - R (contains functions used for analysis)
+  - README_files (i have no idea)
+  - 1_clean_data.R (cleaned up and combined data for analysis)
+  - scratch.r (bad bad place where i played too much)
 
 ## Authors
 Jacob Mathew Sloan

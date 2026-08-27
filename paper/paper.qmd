@@ -25,4 +25,4 @@ values |>
   facet_wrap(vars(Chem), scales = "free", ncol = 1)
 ```
 
-then, we actually have to use the function to run the analysis
+above is the graph for the concentrations. i did it thank you max
