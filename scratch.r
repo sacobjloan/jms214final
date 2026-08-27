@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # The input to this function should be a data frame containing stream chemistry data
-moving_average <- function(df, datefrom, dateto, interval) {
+moving_average <- function(df, datefrom, dateto, interval, samplesite) {
   # Initialize a tibble to contain the results
   result <- tibble(
     window_start = seq(from = as.Date(datefrom), to = as.Date(dateto), by = interval),
@@ -9,7 +9,8 @@ moving_average <- function(df, datefrom, dateto, interval) {
     mg_mgl = NA,
     no3 = NA,
     Ca = NA,
-    NH4 = NA
+    NH4 = NA,
+    site = samplesite
 
     # Fill in the rest of the ions
   )
@@ -33,11 +34,11 @@ moving_average <- function(df, datefrom, dateto, interval) {
     # The line above gets potassium in the window. Get the rest of the ions too
 
     # Calculate the mean of each ion concentration and fill in the result
-    result$k_mgl[x] <- mean(k_window)
-    result$mg_mgl[x] <- mean(mg_window)
-    result$no3[x] <- mean(no3_window)
-    result$Ca[x] <- mean(Ca_window)
-    result$NH4[x] <- mean(nh4_window)
+    result$k_mgl[x] <- mean(k_window, na.rm = TRUE)
+    result$mg_mgl[x] <- mean(mg_window, na.rm =TRUE)
+    result$no3[x] <- mean(no3_window, na.rm= TRUE)
+    result$Ca[x] <- mean(Ca_window, na.rm =TRUE)
+    result$NH4[x] <- mean(nh4_window, na.rm = TRUE)
   }
   
   # Return the result
@@ -52,7 +53,7 @@ prm <- read_csv("data/RioMameyesPuenteRoto.csv")
 valuesb1 <- moving_average(bis1,"1988-01-05", "1994-12-27", "9 weeks")
 valuesb2 <-moving_average(bis2,"1988-01-05", "1994-12-27", "9 weeks")
 valuesb3 <-moving_average(bis3,"1988-01-05", "1994-12-27", "9 weeks")
-valuesrmp <-moving_average(prm,"1988-01-05", "1994-12-27", "9 weeks")
+valuesrmp <-moving_average(prm,"1988-01-05", "1994-12-27", "9 weeks", "rmp")
 
 valuesb1<- valuesb1 |> 
   mutate(site = "b1")
@@ -66,19 +67,15 @@ valuesb3 <- valuesb3 |>
 valuesrmp<- valuesrmp |> 
   mutate(site = "prm")
 
-bigdata <- bind_rows(valuesb1,valuesb2,valuesb3,valuesrmp)
-
-finisheddata <- bigdata |> 
-  group_by(window_start, site) |>
-  summarise_all(mean, na.rm = TRUE) |>
-  arrange(site, window_start) |>
-  pivot_longer(
-    cols = 3:7,
+bigdata <- bind_rows(valuesb1,valuesb2,valuesb3,valuesrmp) |> 
+    pivot_longer(
+    cols = 2:6,
     names_to = "Chem",
     values_to = "conc"
   )
 
-finisheddata |> 
+
+bigdata |> 
     ggplot(
     mapping = aes(x = window_start, y = conc, color = site)
   ) +

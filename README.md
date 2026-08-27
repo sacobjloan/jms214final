@@ -1,8 +1,5 @@
 ![The hurricane helps the chemical concentration in streams](https://i1.sndcdn.com/artworks-TPPlH37LIiREnckM-Syy8SA-t500x500.png)
 
-# A first-level heading
-## A second-level heading
-### A third-level heading
 
 # Chemicals in Puerto Rican Streams before and after Hurricane
 
