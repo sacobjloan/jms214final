@@ -6,18 +6,28 @@ bisley1 <- read_csv("data/QuebradaCuenca1-Bisley.csv")
 rollavg <- function (df, datecol, valuecol, datefrom, dateto, interval){
   window_start <- seq(from = as.Date(datefrom), to = as.Date(dateto), by = interval)
   for (x in 1:(length(window_start))){
-    w1 <- result$window_start[x]
-    w2 <- result$window_start[x + 1]
+    w1 <- window_start[x]
+    w2 <- window_start[x + 1]
+    help <- mean(df[[valuecol]][df[[datecol]] >= w1 & df[[datecol]] <= w2], na.rm = TRUE)
+    print(help)
+    } 
+}
+
+rollavg(bisley1, "Sample_Date", "K", "1988-01-05", "1994-12-27", "9 weeks")
+
+bigrollavg <- function (df, datecol, valuecol, datefrom, dateto, interval){
+
+
+  window_start <- seq(from = as.Date(datefrom), to = as.Date(dateto), by = interval)
+  for (x in 1:(length(window_start))){
+    w1 <- window_start[x]
+    w2 <- window_start[x + 1]
     help <- mean(df[[valuecol]][df[[datecol]] >= w1 & df[[datecol]] <= w2], na.rm = TRUE)
     print(help)
     } 
 }
 
 
-tibble(data = rollavg(bisley1, "Sample_Date", "K", "1990-06-26", "1993-03-02", "9 weeks"))
-x <- rollavg(bisley1, "Sample_Date", "K", "1990-06-26", "1993-03-02", "9 weeks")
-result$k_mgl <- rollavg(bisley1, "Sample_Date", "K", "1990-06-26", "1993-03-02", "9 weeks")
-result$mg_mgl <- rollavg(bisley1, "Sample_Date", "Mg", "1990-06-26", "1993-03-02", "9 weeks")
 
 
 
