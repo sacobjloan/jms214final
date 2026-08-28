@@ -10,4 +10,4 @@ https://github.com/sacobjloan/jms214final/issues/2
 
 https://github.com/sacobjloan/jms214final/issues/1
 
-#3 
+#3 this is bad
