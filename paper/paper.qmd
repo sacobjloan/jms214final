@@ -9,7 +9,7 @@ The chemicals k_mgl, mg_mgl, no3, Ca,     NH4 are stream polutants and negativel
 
 But mostly, we are tasked with recreating this graph
 
-![This is the inspo](/figs/Schaefer_etal_2020_fig3.png)
+![This is the inspo](https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png)
 
 ## Data
 
