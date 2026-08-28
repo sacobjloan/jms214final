@@ -10,4 +10,6 @@ https://github.com/sacobjloan/jms214final/issues/2
 
 https://github.com/sacobjloan/jms214final/issues/1
 
-#3 this is very good
+#3 
+https://github.com/sacobjloan/jms214final/commit/c1cbcc12b7b0818ffc25ce250827b36383f351eb
+Ale said I did it
