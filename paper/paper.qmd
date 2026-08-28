@@ -1,6 +1,15 @@
+---
+title: "Recreating the beautiful graph"
+author: Jacob Sloan
+---
+
 ## Background
 
 The chemicals k_mgl, mg_mgl, no3, Ca,     NH4 are stream polutants and negatively impact the health of aquatic environments. After a hurricane affected Puerto Rico there was concern that stream polutants had increased in concentration, and this analysis ponders that hypothesis.
+
+But mostly, we are tasked with recreating this graph
+
+![This is the inspo](/figs/Schaefer_etal_2020_fig3.png)
 
 ## Data
 
@@ -30,4 +39,4 @@ values |>
   geom_vline(xintercept = dmy("1-12-1989"))
 ```
 
-The above graph demonstrates how concentrations changed after the hurricane event (illustrated by the vertical line occuring in 1989). It looks like there is a small, but lasting increase in concentrations following the hurricane.
+The above graph demonstrates how concentrations changed after the hurricane event (illustrated by the vertical line occuring in 1989). It looks like there is a small, but lasting increase in concentrations following the hurricane. And more importantly, it kinda looks like the inspo graph.
