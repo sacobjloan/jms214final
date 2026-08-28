@@ -20,17 +20,21 @@ The purpose of this repo is to analyse certain chemical concentrations in four d
 ## Repo Structure
 
 - jms214final
-  - data (contains raw data sourced from online)
+  - data (contains raw data sourced from https://eds-214-reproducibility-m26.github.io/course-materials/interactive/interactive-day1am.html#ref-mcdowell2024)
   - docs (contains files for website)
   - figs (contains nothing)
-  - output (contains cleaned data)
+  - output (contains cleaned data used for analysis)
   - R (contains functions used for analysis)
   - README_files (i have no idea)
   - 1_clean_data.R (cleaned up and combined data for analysis)
   - scratch.r (bad bad place where i played too much)
 
 ## Authors
-Jacob Mathew Sloan
+
+[Jacob Sloan](https://github.com/sacobjloan)
+[Sarah Hinkley](https://github.com/sarahhinkley)
+
+
 
 ## References
 McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024. “Chemistry of Stream Water from the Luquillo Mountains.” Environmental Data Initiative. https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458.

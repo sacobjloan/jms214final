@@ -1,19 +1,23 @@
 ## Background
 
-Max told us on day 1 we were going to do this, and now we are. We are looking at the concentrations of 5 chemicals in 4 different streams in puerto rico, looking at how the concentrations changed after a hurricane event.
+The chemicals k_mgl, mg_mgl, no3, Ca,     NH4 are stream polutants and negatively impact the health of aquatic environments. After a hurricane affected Puerto Rico there was concern that stream polutants had increased in concentration, and this analysis ponders that hypothesis.
 
 ## Data
 
-Data came from a website online, but is housed within this directory in the data folder as .csv files.
+
+Data was pulled from the [McDowell and International Institute Of Tropical Foresty](https://eds-214-reproducibility-m26.github.io/course-materials/interactive/interactive-day1am.html#ref-mcdowell2024
+). Four sets of data were used for this analysis, coming from four streams: QuebradaCuenca1, QuebradaCuenca2, QuebradaCuenca3, and RioMameyesPuente. 
 
 ## Methods
 
-Concentrations were averaged over a moving 9 week interval
+Concentrations of k_mgl, mg_mgl, no3, Ca, NH4 were analysed in 9 week moving averages.
 
 
 ## Results
-
 ```{r}
+#| echo: false
+#| warning: false
+
 library(tidyverse)
 values <- read_csv("../output/cleandata.csv")
 
@@ -22,7 +26,8 @@ values |>
     mapping = aes(x = window_start, y = conc, color = site)
   ) +
   geom_line() +
-  facet_wrap(vars(Chem), scales = "free", ncol = 1)
+  facet_wrap(vars(Chem), scales = "free", ncol = 1) +
+  geom_vline(xintercept = dmy("1-12-1989"))
 ```
 
-above is the graph for the concentrations. i did it thank you max
+The above graph demonstrates how concentrations changed after the hurricane event (illustrated by the vertical line occuring in 1989). It looks like there is a small, but lasting increase in concentrations following the hurricane.

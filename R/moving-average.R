@@ -1,3 +1,6 @@
+# creating a simpler data file for easy calling later
+
+
 moving_average <- function(df, datefrom, dateto, interval, samplesite) {
   # Initialize a tibble to contain the results
   result <- tibble(
@@ -7,7 +10,7 @@ moving_average <- function(df, datefrom, dateto, interval, samplesite) {
     no3 = NA,
     Ca = NA,
     NH4 = NA,
-    site = samplesite
+    site = samplesite # added sample site parameter for easy data sorting
 
     # Fill in the rest of the ions
   )
